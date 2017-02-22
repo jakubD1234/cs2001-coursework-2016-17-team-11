@@ -81,19 +81,14 @@
         android:layout_marginTop="22dp"
         android:id="@+id/btnlogin" />
 
-    <TextView
-        android:id="@+id/tvforgot"
+    <Button
+        android:text="forgotten Password"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:text="Forgot Password"
-        android:textColor="@color/dark_gray"
-        android:textSize="15sp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/btnlogin"
-        android:layout_alignRight="@+id/ivlogo"
-        android:layout_alignEnd="@+id/ivlogo"
-        android:layout_marginTop="40dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/btnforgotpassword" />
 
 
 </RelativeLayout>
