@@ -1,0 +1,64 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/toolbar_color"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/AppTheme">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:src="@mipmap/back"
+            />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Interests"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/whitecolor"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"/>
+
+
+        <ImageView
+            android:id="@+id/ivRightInside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/ivRight"
+            android:gravity="center"
+            android:visibility="gone"
+            />
+
+
+        <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:src="@mipmap/share_icon"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+
+</android.support.v7.widget.Toolbar>

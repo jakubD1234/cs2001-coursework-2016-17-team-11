@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="btn_back_color">#05121b</color>
+    <color name="backgroundColor">#0099DA</color>
+    <color name="dark_gray">#616064</color>
+    <color name="light_gray">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blackcolor">#000000</color>
+    <color name="reddish">#BE4144</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#789A53</color>
+    <color name="dark_green">#009362</color>
+    <color name="light_yellow">#F99650</color>
+    <color name="background">#f3ede6</color>
+    <color name="toolbar_color">#607D8B</color>
+    <color name="grey_300">#8D9496</color>
+    <color name="chatTextMe">#05296e</color>
+    <color name="grey_400">#5A5D5E</color>
+
+    <color name="light_white">#FAFAFA</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="toolbar_light_color">#4DB6AC</color>
+    <color name="toolbar_text_color">#FFFFFF</color>
+    <color name="whitecolor">#ffffff</color>
+    <color name="darkGray">#666666</color>
+    <color name="tranparent_color">#00FFFFFF</color>
+    <color name="light_blue">#8ACBEB</color>
+    <color name="default_text_colot">#808080</color>
+
+</resources>

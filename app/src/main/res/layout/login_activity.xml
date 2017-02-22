@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <ImageView
+        android:id="@+id/ivlogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/toolbar"
+        android:src="@mipmap/logo" />
+
+    <LinearLayout
+        android:id="@+id/linerLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start|center_vertical"
+            android:text="Username"
+            android:textColor="@color/dark_gray"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/border_round_background_dark_gray"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="15dp"
+            android:gravity="start|center_vertical"
+            android:text="Password *"
+            android:textColor="@color/dark_gray"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/border_round_background_dark_gray"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/linerLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/border_round_background_skype_blue"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvforgot"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Forgot Password"
+        android:textColor="@color/dark_gray"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>
