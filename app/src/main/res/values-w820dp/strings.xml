@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">Login</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="unibuddy">UNIBUDDY</string>
+
+
+<string name="app_name">HCI</string>
+<string name="Please_wait">Please wait a minute.</string>
+<string name="Confirm">Confirm</string>
+<string name="Ok">Ok</string>
+<string name="Cancel">Cancel</string>
+<string name="Are_you_sure">Are you sure you want to delete it.</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+<string name="Please_enter_fname_name"> Please enter First name.</string>
+<string name="Please_enter_lname_name"> Please enter Last name.</string>
+<string name="Please_select_gender_name"> Please select your Gender.</string>
+<string name="Date_of_Birth_can_not_be_earlier_than_today_date"> Date of Birth can\'t be later than today date.</string>
+<string name="Please_enter_phone_number"> Please enter Phone number.</string>
+<string name="Please_enter_correct_email_id"> Please enter valid Email Address.</string>
+<string name="Please_enter_confirm_email_id"> Please enter confirm Email Address.</string>
+<string name="Email_address_not_matching"> Email address not matched.</string>
+<string name="Please_enter_password">Please enter at least 4 characters password.</string>
+<string name="Please_enter_confirm_password">Please enter confirm password.</string>
+<string name="Your_password_doesn_match">Your password and confirm password do not match.</string>
+<string name="Please_enter_University">Please enter University name.</string>
+<string name="Please_enter_Level">Please enter Level number.</string>
+<string name="Please_enter_Course">Please enter Course name.</string>
+<string name="lease_select_Accomodation">Please select Accomodation.</string>
+<string name="lease_select_profile_image">Please select your prifle image.</string>
+
+<string name="Please_enter_user_name"> Please enter user name.</string>
+<string name="Select_Option"> Select Option</string>
+<string-array name="gallery">
+    <item>Camera</item>
+    <item>Gallery</item>
+    <item>Cancel</item>
+</string-array>
+
+<string-array name="months">
+    <item>January</item>
+    <item>February</item>
+    <item>March</item>
+    <item>April</item>
+    <item>May</item>
+    <item>June</item>
+    <item>July</item>
+    <item>August</item>
+    <item>September</item>
+    <item>October</item>
+    <item>November</item>
+    <item>December</item>
+</string-array>
+
+
+<string-array name="nav_drawer_items">
+    <item>Intersets</item>
+    x
+    <item>Friends</item>
+    <item>Chatting</item>
+    <item>Edit Profile</item>
+    <item>Rate App</item>
+    <item>Share App</item>
+    <item>Logout</item>
+</string-array>
+
+<array name="nav_drawer_icons">
+    <item>@mipmap/ic_action_action_home</item>
+    <item>@mipmap/friends</item>
+    <item>@mipmap/message_icon_white</item>
+    <item>@mipmap/ic_launcher_pencil</item>
+    <item>@mipmap/ic_action_action_thumb_up</item>
+    <item>@mipmap/share_icon</item>
+    <item>@mipmap/ic_action_action_input</item>
+
+
+</array>
+
+
+<!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

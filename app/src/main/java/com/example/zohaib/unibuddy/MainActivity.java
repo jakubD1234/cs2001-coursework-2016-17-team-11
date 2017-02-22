@@ -19,7 +19,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null)
+                if (user != null)
                     Log.d("AUTH", "user logged in: " + user.getEmail());
                 else
                     Log.d("AUTH", "user logged out.");
@@ -56,9 +55,43 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
+        findViewById(R.id.Gmail_sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
-    }
+
+
+
+
+
+
+
+
+     //  findViewById(R.id.buttonLogin).setOnClickListener(this);
+   //  findViewById(R.id.buttonSignup).setOnClickListener(this);
+
+
+
+
+
+
+
+            findViewById(R.id.buttonLogin_login).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            findViewById(R.id.buttonSignup_login).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+
 
     @Override
     protected void onStart() {
@@ -114,15 +147,22 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         Log.d(TAG, "Connection failed.");
     }
 
+
+
+
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.sign_in_button:
+            case R.id.Gmail_sign_in_button:
                 signIn();
                 break;
             case R.id.sign_out_button:
                 signOut();
                 break;
+            case R.id.buttonSignup_login:
+                new RegistrationActivity();
+                break;
+
         }
     }
 }
