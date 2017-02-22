@@ -1,134 +1,112 @@
 package com.example.zohaib.unibuddy;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
-import android.util.Patterns;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText mEtEmail, mEtPassword;
+
+    private EditText inputEmail, inputPassword;
+    private FirebaseAuth auth;
+    //private ProgressBar progressBar;
+    private Button btnSignup, btnLogin, btnReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // set the view now
         setContentView(R.layout.activity_login);
 
-        TextView textView = (TextView) findViewById(R.id.toolbar);
-        textView.setText("Login");
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
 
-        mEtEmail = (EditText) findViewById(R.id.editText1);
-        mEtPassword = (EditText) findViewById(R.id.editText2);
+//        if (auth.getCurrentUser() != null) {
+//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//            finish();
+//        }
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       // setSupportActionBar(toolbar);
 
-       ImageView ivBack = (ImageView) findViewById(R.id.ivlogo);
-        ivBack.setVisibility(View.VISIBLE);
+        inputEmail = (EditText) findViewById(R.id.user_email);
+       inputPassword = (EditText) findViewById(R.id.user_password);
+        //progressBar = (ProgressBar) findViewById(R.id.progressBar);
+       //btnSignup = (Button) findViewById(R.id.btn_signup);
+        btnLogin = (Button) findViewById(R.id.btnlogin);
+        //btnReset = (Button) findViewById(R.id.btn_reset_password);
 
-        ivBack.setOnClickListener(new View.OnClickListener() {
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
+
+//        btnSignup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
+//            }
+//        });
+
+//        btnReset.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+//            }
+//        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-            }
-        });
-        findViewById(R.id.tvforgot).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dailogResetPassword();
-            }
-        });
-        findViewById(R.id.tvLogin).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-            }
-        });
-    }
+                String email = inputEmail.getText().toString();
+                final String password = inputPassword.getText().toString();
 
-    private void login() {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (imm.isAcceptingText()) {
-            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
-       /* Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();*/
-
-        if (mEtEmail.getText().toString().equals("") || !Patterns.EMAIL_ADDRESS.matcher(mEtEmail.getText().toString()).matches()) {
-            Toast.makeText(this, getResources().getString(R.string.error_invalid_email), Toast.LENGTH_SHORT).show();
-        } else if (mEtPassword.getText().toString().length() < 4) {
-            Toast.makeText(this, getResources().getString(R.string.error_incorrect_password), Toast.LENGTH_SHORT).show();
-        } else {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
-        }
-
-
-    }
-
-    private void dailogResetPassword() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Reset Password");
-
-        alert.setMessage("Please enter the e-mail address for your account.");
-        final EditText email = new EditText(this);
-        LinearLayout lay = new LinearLayout(this);
-        lay.setOrientation(LinearLayout.VERTICAL);
-        email.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-        lay.addView(email);
-        alert.setView(lay);
-
-        alert.setPositiveButton("Ok",
-                new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // TODO Auto-generated method stub
-
-                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(email.getWindowToken(), 0);
-                        final String emailID = email.getText().toString();
-
-                        if (emailID.equals("") || !Patterns.EMAIL_ADDRESS.matcher(emailID).matches()) {
-                            Toast.makeText(getApplicationContext(), "Please enter a valid email address.", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Your password has send on your register emial.", Toast.LENGTH_SHORT).show();
-                        }
-
-
-                    }
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-        );
-
-        alert.setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener()
-
-                {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // TODO Auto-generated method stub
-                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(email.getWindowToken(), 0);
-                    }
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-        );
+                //progressBar.setVisibility(View.VISIBLE);
 
-        alert.show();
+                //authenticate user
+                auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                //progressBar.setVisibility(View.GONE);
+                                if (!task.isSuccessful()) {
+                                    // there was an error
+                                    if (password.length() < 6) {
+                                        inputPassword.setError(getString(R.string.minimum_password));
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                    }
+                                } else {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
+            }
+        });
     }
 }
+
