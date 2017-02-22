@@ -220,6 +220,10 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                             }
                         });
 
+
+
+                signUp();
+
             }
         });
     }
@@ -293,9 +297,9 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             Toast.makeText(this, getResources().getString(R.string.Please_enter_Course), Toast.LENGTH_SHORT).show();
         } else if (mAccomodation.equals("")) {
             Toast.makeText(this, getResources().getString(R.string.lease_select_Accomodation), Toast.LENGTH_SHORT).show();
-        }else if (sBitmap==null) {
+        }/*else if (sBitmap==null) {
             Toast.makeText(this, getResources().getString(R.string.lease_select_profile_image), Toast.LENGTH_SHORT).show();
-        } else {
+        }*/ else {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

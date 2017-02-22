@@ -87,9 +87,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
                     startActivity(intent);
+
                 }
             });
-        }
+
+
+    }
+
 
 
 
@@ -163,6 +167,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 new RegistrationActivity();
                 break;
 
+
         }
-    }
-}
+
+
+}}
