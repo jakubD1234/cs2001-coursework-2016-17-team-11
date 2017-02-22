@@ -1,47 +1,79 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@color/background"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar" />
-
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <!-- Framelayout to display Fragments -->
-
-        <FrameLayout
-            android:id="@+id/content_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-           />
-
-        <!-- Listview to display slider menu -->
-
-        <RelativeLayout
-            android:id="@+id/relLayoutDrawer"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@color/toolbar_color"
-            >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="UNIBUDDY"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
 
-            <ListView
-                android:id="@+id/list_slidermenu"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:choiceMode="singleChoice"
-                android:divider="@color/light_gray"
-                android:dividerHeight="1.5dp"
-                android:listSelector="@drawable/list_selector"
-                android:paddingBottom="10dp" />
-        </RelativeLayout>
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ivlogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/border_round_background_skype_blue"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    </android.support.v4.widget.DrawerLayout>
-</LinearLayout>
+    <Button
+        android:id="@+id/buttonSignup"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_round_background_skype_blue"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/ivlogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="119dp"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/logo"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/buttonSignup"
+        android:layout_alignRight="@+id/ivlogo"
+        android:layout_alignEnd="@+id/ivlogo" />
+
+    <Button
+        android:text="Sign out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sign_out_button"
+        android:layout_below="@+id/sign_in_button"
+        android:layout_alignLeft="@+id/ivlogo"
+        android:layout_alignStart="@+id/ivlogo"
+        android:layout_marginTop="16dp" />
+
+
+</RelativeLayout>
