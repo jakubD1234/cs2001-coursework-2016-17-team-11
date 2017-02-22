@@ -157,26 +157,6 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
