@@ -1,0 +1,1 @@
+Messaging part Java Code implemented on android studios
